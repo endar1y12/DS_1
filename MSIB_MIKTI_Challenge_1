@@ -1,0 +1,937 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMFO2tvg32nHx4AamBDo7h2",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/endar1y12/DS_1/blob/main/MSIB_MIKTI_Challenge_1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Nama : Daryanti\n",
+        "# Data Science 1"
+      ],
+      "metadata": {
+        "id": "g_QUeaORmMsu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oZ2lq4QUHmzE",
+        "outputId": "a4e5ac12-5203-4b37-c2be-9d27a1d81b28"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[33mhint: Using 'master' as the name for the initial branch. This default branch name\u001b[m\n",
+            "\u001b[33mhint: is subject to change. To configure the initial branch name to use in all\u001b[m\n",
+            "\u001b[33mhint: of your new repositories, which will suppress this warning, call:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit config --global init.defaultBranch <name>\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\u001b[m\n",
+            "\u001b[33mhint: 'development'. The just-created branch can be renamed via this command:\u001b[m\n",
+            "\u001b[33mhint: \u001b[m\n",
+            "\u001b[33mhint: \tgit branch -m <name>\u001b[m\n",
+            "Initialized empty Git repository in /content/.git/\n"
+          ]
+        }
+      ],
+      "source": [
+        "!git init"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git clone https://github.com/endar1y12/GIT-Schema"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pkKSWj-kOVc4",
+        "outputId": "e61e7432-33ae-47fa-adcd-5a4f8eb4d59c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cloning into 'GIT-Schema'...\n",
+            "warning: You appear to have cloned an empty repository.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pwd"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-EpnGe8aIC67",
+        "outputId": "ef25e7ac-0f0b-405f-c0b6-513d7edfc3d9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%cd GIT-Schema"
+      ],
+      "metadata": {
+        "id": "WcFz8qcdIGxa",
+        "outputId": "a9179740-09bf-49a4-ed36-1857517eecbc",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "/content/GIT-Schema\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "! git status"
+      ],
+      "metadata": {
+        "id": "gsS4np5mIQ0q",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "69400c6a-f318-47c0-a2c1-8089db500d10"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch main\n",
+            "\n",
+            "No commits yet\n",
+            "\n",
+            "nothing to commit (create/copy files and use \"git add\" to track)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#auth identyty\n",
+        "! git config  --global user.email 'daryantiyanti559@gmail.com'\n",
+        "! git config --global user.name 'yanti'"
+      ],
+      "metadata": {
+        "id": "xhVTPtG2IV5r"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git remote rm origin"
+      ],
+      "metadata": {
+        "id": "jrU4sRaOO5Hq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#menambahkan index ke repository lokal\n",
+        "! git remote add origin https://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@github.com/endar1y12/GIT-Schema"
+      ],
+      "metadata": {
+        "id": "UHbhcGHvIhQd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git config --list"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "z8ZOAzqQS_2C",
+        "outputId": "7446c41a-5629-48cd-acf2-edf19f041ffe"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "filter.lfs.clean=git-lfs clean -- %f\n",
+            "filter.lfs.smudge=git-lfs smudge -- %f\n",
+            "filter.lfs.process=git-lfs filter-process\n",
+            "filter.lfs.required=true\n",
+            "user.email=daryantiyanti559@gmail.com\n",
+            "user.name=yanti\n",
+            "core.repositoryformatversion=0\n",
+            "core.filemode=true\n",
+            "core.bare=false\n",
+            "core.logallrefupdates=true\n",
+            "remote.origin.url=https://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@github.com/endar1y12/GIT-Schema\n",
+            "remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "! touch Read.me"
+      ],
+      "metadata": {
+        "id": "mTbniE1uPB9d"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add ."
+      ],
+      "metadata": {
+        "id": "L-942d9MPJRm"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \" Penambahan file read.me\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8zfgp6PxPNY1",
+        "outputId": "114b934c-2dca-4c7d-df48-a605967c8013"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[main (root-commit) bdbfe89]  Penambahan file read.me\n",
+            " 1 file changed, 0 insertions(+), 0 deletions(-)\n",
+            " create mode 100644 Read.me\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "! git push origin main"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9WEV5LViPZG9",
+        "outputId": "93a4cca7-1243-469b-9ba4-0adde5cb2f33"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enumerating objects: 3, done.\n",
+            "Counting objects:  33% (1/3)\rCounting objects:  66% (2/3)\rCounting objects: 100% (3/3)\rCounting objects: 100% (3/3), done.\n",
+            "Writing objects:  33% (1/3)\rWriting objects:  66% (2/3)\rWriting objects: 100% (3/3)\rWriting objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.\n",
+            "Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            " * [new branch]      main -> main\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch Branch1"
+      ],
+      "metadata": {
+        "id": "Crlig3QQSzyr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch Branch2"
+      ],
+      "metadata": {
+        "id": "KF1h5CkHQ2Qo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git branch -a"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "m7FufejaBgoc",
+        "outputId": "3d16ded3-92b5-408d-fe0c-62d496c233f5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Branch1\u001b[m\n",
+            "  Branch2\u001b[m\n",
+            "  a\u001b[m\n",
+            "* \u001b[32mmain\u001b[m\n",
+            "  \u001b[31mremotes/origin/main\u001b[m\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch Branch1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "No7CLdMYQ9_G",
+        "outputId": "176dad4b-8a85-45b2-d176-4bd22d71c895"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to branch 'Branch1'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!touch Read.me"
+      ],
+      "metadata": {
+        "id": "tjNzdhzzRCeP"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add ."
+      ],
+      "metadata": {
+        "id": "9kyHS9XzRGQh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \" penambahan file read.me\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "h_51DQSPRIaQ",
+        "outputId": "3b81bc15-10c0-4224-ef0e-2bb1949c3f1f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch Branch1\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push -u origin Branch1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "v8LVyX43RKTi",
+        "outputId": "2acc1abc-c319-47b1-dd0a-02e01f915162"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total 0 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "remote: \n",
+            "remote: Create a pull request for 'Branch1' on GitHub by visiting:\u001b[K\n",
+            "remote:      https://github.com/endar1y12/GIT-Schema/pull/new/Branch1\u001b[K\n",
+            "remote: \n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            " * [new branch]      Branch1 -> Branch1\n",
+            "Branch 'Branch1' set up to track remote branch 'Branch1' from 'origin'.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch Branch2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "t8slac-oRl5w",
+        "outputId": "c89a998d-b84e-4882-b404-dbc3ec4457a5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to branch 'Branch2'\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "! touch Read.me"
+      ],
+      "metadata": {
+        "id": "N0Xu1o2aR1QU"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git add ."
+      ],
+      "metadata": {
+        "id": "NBo3Y8YQR6jm"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -m \"menambahkan file read.me\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kHaF-19NR9bq",
+        "outputId": "f0dccb6a-c06f-422e-c84b-588aef793d6f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch Branch2\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push -u origin Branch2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SgXtDJ5fSDdh",
+        "outputId": "306d7084-f636-4e8b-e633-e9f40ad03023"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Total 0 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "remote: \n",
+            "remote: Create a pull request for 'Branch2' on GitHub by visiting:\u001b[K\n",
+            "remote:      https://github.com/endar1y12/GIT-Schema/pull/new/Branch2\u001b[K\n",
+            "remote: \n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            " * [new branch]      Branch2 -> Branch2\n",
+            "Branch 'Branch2' set up to track remote branch 'Branch2' from 'origin'.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-ThDs6L6WSm1",
+        "outputId": "7f53dc22-8b61-4223-c9f7-fa0c50831933"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch Branch2\n",
+            "Your branch is up to date with 'origin/Branch2'.\n",
+            "\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile Read.me\n",
+        "GIT adalah singkatan dari Group Inclusive Tour, merupakan version control yang digunakan programmer untuk berkolaborasi dalam membuat atau mengembangkan aplikasi.\n",
+        "Tujuan penggunaan GIT adalah untuk memudahkan pengelolaan source code program, seperti adanya perubahan pada baris kode yang diganti atau ditambahkan.\n",
+        "Version Control adalah aplikasi yang mengelola dan mencatat setiap perubahan pada file.\n",
+        "Setiap perubahan yang terjadi akan dicatat lengkap dengan informasi siapa yang merubah, kapan perubahan dilakukan, dan isi perubahannya.\n",
+        "\n",
+        "Dengan menggunakan GIT, Anda dapat bekerja bersama programmer lain dalam membuat atau mengembangkan sistem.\n",
+        "Anda tidak perlu khawatir source code Anda akan tercampur maupun rusak, karena setiap programmer akan bekerja di dalam branch-nya masing-masing.\n",
+        "Perubahan yang terjadi di dalam code program juga akan lebih mudah dilacak.\n",
+        "Menariknya, jika code program selesai dibuat, maka setiap code program dari masing-masing programmer dapat disatukan dengan mudah.\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z5beDEWMChKv",
+        "outputId": "d4c3c5aa-ac7e-4e1c-f6c2-109383d14ebc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting Read.me\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%more Read.me"
+      ],
+      "metadata": {
+        "id": "UTu_sagoDqdT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -am \"edit teks read.me \""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ugWHr0cYWswj",
+        "outputId": "2649172f-f580-4bdb-abd3-bb349930a875"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Branch2 3362ea8] edit teks read.me\n",
+            " 1 file changed, 10 insertions(+)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kqj9WWVoW58o",
+        "outputId": "f60bdb22-5c83-488f-9fd9-0dc31854fc00"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enumerating objects: 5, done.\n",
+            "Counting objects:  20% (1/5)\rCounting objects:  40% (2/5)\rCounting objects:  60% (3/5)\rCounting objects:  80% (4/5)\rCounting objects: 100% (5/5)\rCounting objects: 100% (5/5), done.\n",
+            "Delta compression using up to 2 threads\n",
+            "Compressing objects:  50% (1/2)\rCompressing objects: 100% (2/2)\rCompressing objects: 100% (2/2), done.\n",
+            "Writing objects:  33% (1/3)\rWriting objects:  66% (2/3)\rWriting objects: 100% (3/3)\rWriting objects: 100% (3/3), 708 bytes | 708.00 KiB/s, done.\n",
+            "Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            "   bdbfe89..3362ea8  Branch2 -> Branch2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git switch Branch1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0wd92YU0XELk",
+        "outputId": "87516f39-05d7-463c-9a80-99d26de67c14"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Switched to branch 'Branch1'\n",
+            "Your branch is up to date with 'origin/Branch1'.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile Read.me\n",
+        "Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.\n",
+        "Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.\n",
+        "Semua orang yang terlibat dalam pengkodean proyek akan menyimpan database Git, sehingga akan memudahkan dalam mengelola proyek baik online maupun offline.\n",
+        "\n",
+        "Jadi selain untuk mengontrol versi, git juga digunakan untuk kolaborasi.\n",
+        "Saat ini Git menjadi salah satu tool terpopuler yang digunakan pada pengembangan software open souce maupun closed source.\n",
+        "Google, Microsoft, Facebook dan berbagai perusahaan raksasa lainnya menggunakan Git."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yj1SfJJnD-YT",
+        "outputId": "6231b68a-a951-437c-ef06-4425f57df17f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting Read.me\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%more Read.me"
+      ],
+      "metadata": {
+        "id": "XJJL-V6bE3Bh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -am \"edit read.me di branch1\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hetT3mAiXLh1",
+        "outputId": "e89a5141-036a-4298-f6d2-0423c6a7277d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Branch1 4eb06c3] edit read.me di branch1\n",
+            " 1 file changed, 7 insertions(+)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LVmc9DNaXjih",
+        "outputId": "b210da5a-28b4-4967-c3ab-98e27da7f0f2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enumerating objects: 5, done.\n",
+            "Counting objects:  20% (1/5)\rCounting objects:  40% (2/5)\rCounting objects:  60% (3/5)\rCounting objects:  80% (4/5)\rCounting objects: 100% (5/5)\rCounting objects: 100% (5/5), done.\n",
+            "Delta compression using up to 2 threads\n",
+            "Compressing objects:  50% (1/2)\rCompressing objects: 100% (2/2)\rCompressing objects: 100% (2/2), done.\n",
+            "Writing objects:  33% (1/3)\rWriting objects:  66% (2/3)\rWriting objects: 100% (3/3)\rWriting objects: 100% (3/3), 571 bytes | 571.00 KiB/s, done.\n",
+            "Total 3 (delta 0), reused 0 (delta 0), pack-reused 0\n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            "   bdbfe89..4eb06c3  Branch1 -> Branch1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git status"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DKMjDSa_Xxor",
+        "outputId": "ec9712c7-a19d-485a-f787-06a93c720911"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "On branch Branch1\n",
+            "Your branch is up to date with 'origin/Branch1'.\n",
+            "\n",
+            "nothing to commit, working tree clean\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%more Read.me"
+      ],
+      "metadata": {
+        "id": "RCkUkc6sFLhE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile Read.me\n",
+        "\n",
+        "Git adalah salah satu tool yang sering digunakan dalam proyek pengembangan software.\n",
+        "Git bahkan menjadi tool yang wajib dipahami oleh programmer, karena banyak digunakan di mana-mana.\n",
+        "Semua orang yang terlibat dalam pengkodean proyek akan menyimpan database Git, sehingga akan memudahkan dalam mengelola proyek baik online maupun offline.\n",
+        "\n",
+        "Jadi selain untuk mengontrol versi, git juga digunakan untuk kolaborasi.\n",
+        "Saat ini Git menjadi salah satu tool terpopuler yang digunakan pada pengembangan software open souce maupun closed source.\n",
+        "Google, Microsoft, Facebook dan berbagai perusahaan raksasa lainnya menggunakan Git.\n",
+        "\n",
+        "GIT adalah singkatan dari Group Inclusive Tour, merupakan version control yang digunakan programmer untuk berkolaborasi dalam membuat atau mengembangkan aplikasi.\n",
+        "Tujuan penggunaan GIT adalah untuk memudahkan pengelolaan source code program, seperti adanya perubahan pada baris kode yang diganti atau ditambahkan.\n",
+        "Version Control adalah aplikasi yang mengelola dan mencatat setiap perubahan pada file.\n",
+        "Setiap perubahan yang terjadi akan dicatat lengkap dengan informasi siapa yang merubah, kapan perubahan dilakukan, dan isi perubahannya.\n",
+        "\n",
+        "Dengan menggunakan GIT, Anda dapat bekerja bersama programmer lain dalam membuat atau mengembangkan sistem.\n",
+        "Anda tidak perlu khawatir source code Anda akan tercampur maupun rusak, karena setiap programmer akan bekerja di dalam branch-nya masing-masing.\n",
+        "Perubahan yang terjadi di dalam code program juga akan lebih mudah dilacak.\n",
+        "Menariknya, jika code program selesai dibuat, maka setiap code program dari masing-masing programmer dapat disatukan dengan mudah.\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lU--NYYpG81l",
+        "outputId": "8df435a9-d592-40d9-fa09-b6f9951d80cb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting Read.me\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git commit -am \"gabungkan 2 file Read.me\""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VgLQiybzHJtk",
+        "outputId": "5c11588b-205b-43bb-d1e0-eabf54031709"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[Branch1 7b27fd1] gabungkan 2 file Read.me\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!git push"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-ypPicC3Hgcc",
+        "outputId": "78e86c2c-b721-4cdd-f1d5-95330430708b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enumerating objects: 7, done.\n",
+            "Counting objects:  14% (1/7)\rCounting objects:  28% (2/7)\rCounting objects:  42% (3/7)\rCounting objects:  57% (4/7)\rCounting objects:  71% (5/7)\rCounting objects:  85% (6/7)\rCounting objects: 100% (7/7)\rCounting objects: 100% (7/7), done.\n",
+            "Delta compression using up to 2 threads\n",
+            "Compressing objects:  50% (1/2)\rCompressing objects: 100% (2/2)\rCompressing objects: 100% (2/2), done.\n",
+            "Writing objects:  33% (1/3)\rWriting objects:  66% (2/3)\rWriting objects: 100% (3/3)\rWriting objects: 100% (3/3), 655 bytes | 655.00 KiB/s, done.\n",
+            "Total 3 (delta 1), reused 0 (delta 0), pack-reused 0\n",
+            "remote: Resolving deltas:   0% (0/1)\u001b[K\rremote: Resolving deltas: 100% (1/1)\u001b[K\rremote: Resolving deltas: 100% (1/1), completed with 1 local object.\u001b[K\n",
+            "To https://github.com/endar1y12/GIT-Schema\n",
+            "   4eb06c3..7b27fd1  Branch1 -> Branch1\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
